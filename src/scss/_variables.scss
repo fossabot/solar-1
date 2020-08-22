@@ -1,0 +1,47 @@
+$theme-colors: (
+  "primary": rgb(25, 118, 210),
+  "danger": rgb(211, 47, 47),
+  "success": rgb(56, 142, 60),
+  "text": rgb(30, 35, 36),
+  "light": rgb(241, 243, 245),
+  "white": rgb(255, 255, 255),
+) !default;
+
+$buttons: (
+  "primary": (
+    "background": map-get($theme-colors, "primary"),
+    "foreground": map-get($theme-colors, "white")
+  ),
+  "default": (
+    "background": darken(map-get($theme-colors, "light"), 5%),
+    "foreground": map-get($theme-colors, "text")
+  ),
+  "danger": (
+    "background": map-get($theme-colors, "danger"),
+    "foreground": map-get($theme-colors, "white")
+  ),
+  "success": (
+    "background": map-get($theme-colors, "success"),
+    "foreground": map-get($theme-colors, "white")
+  )
+);
+
+$text-font-stack: "Manrope", sans-serif !default;
+$title-font-stack: "Exo 2", sans-serif !default;
+
+// Bootstrap specific
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xlg: 1366px,
+  fhd: 1920px,
+  rt: 2560px,
+  rt15: 2880px,
+  uhd: 3840px,
+  4k: 4096px,
+  8k: 8192px
+);

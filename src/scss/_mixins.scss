@@ -1,0 +1,17 @@
+@mixin sl-button-color($color) {
+  background: map-get(map-get($buttons, $color), "background");
+  color: map-get(map-get($buttons, $color), "foreground");
+  font-weight: 600;
+
+  &:hover, &:focus {
+    @if $color == "default" {
+      background: darken(map-get(map-get($buttons, $color), "background"), 15%);
+    } @else {
+      background: lighten(map-get(map-get($buttons, $color), "background"), 15%);
+    }
+  }
+}
+
+@mixin shadow($depth) {
+  box-shadow: 0 2px $depth/2 (0 - ($depth / 2)) rgba(35, 37, 39, .3);
+}

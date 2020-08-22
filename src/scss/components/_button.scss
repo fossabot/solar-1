@@ -1,0 +1,36 @@
+.sl-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  @include sl-button-color("default");
+
+  border-width: 0;
+  line-height: 2.4rem;
+  height: 2.4rem;
+  font-size: .9rem;
+  padding: 0 1rem;
+  border-radius: .25rem;
+  transition: background 400ms ease, transform 200ms ease;
+  box-shadow: unset;
+  display: flex;
+  align-items: center;
+
+  >[class^=ri] {
+    margin-right: .5rem;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &::selection {
+    background: transparent;
+  }
+
+  @each $theme, $settings in $buttons {
+    &--#{$theme} {
+      @include sl-button-color($theme);
+    }
+  }
+}

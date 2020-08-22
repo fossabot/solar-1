@@ -1,0 +1,8 @@
+# Project
+.vscode
+.idea
+
+# Package specific
+build
+coverage
+node_modules
