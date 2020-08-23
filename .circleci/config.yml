@@ -1,10 +1,9 @@
 version: 2.1
 orbs:
-  codecov: codecov/codecov@1.0.2
+  codecov: codecov/codecov@1.1.1
 
 jobs:
   build:
-    working_directory: ~/solar-design-system
     docker:
       - image: circleci/node:10.20.1
     steps:
@@ -18,9 +17,12 @@ jobs:
           key: npm-cache-v1-{{ checksum "yarn.lock" }}
           paths:
             - /home/circleci/.npm
+  test:
+    docker:
+      - image: circleci/node:10.20.1
+    steps:
       - run:
           name: Run tests with coverage
           command: yarn run test
-
       - codecov/upload:
           file: {{ coverage_report_filepath }}
